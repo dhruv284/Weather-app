@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Weather App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex ms-auto">
+                    <input id="Latitude" class="form-control me-2" type="text" placeholder="Latitude">
+                    <input id="Longitude" class="form-control me-2" type="text" placeholder="Longitude">
+                    <button class="btn btn-light" type="submit" id="submit">Get Weather</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Weather Display -->
+    <div class="container my-4">
+        <h2 class="text-center">Weather for <span id="cityName">[Location]</span></h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-header">Temperature</div>
+                    <div class="card-body">
+                        <p>Current: <span id="temp"></span>°C</p>
+                        <p>Min: <span id="min_temp"></span>°C</p>
+                        <p>Max: <span id="max_temp"></span>°C</p>
+                        <p>Feels Like: <span id="feels_like"></span>°C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-header">Wind & Clouds</div>
+                    <div class="card-body">
+                        <p>Cloud Coverage: <span id="cloud_pct"></span>%</p>
+                        <p>Wind Speed: <span id="wind_speed"></span> km/h</p>
+                        <p>Wind Direction: <span id="wind_degrees"></span>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-header">Humidity & Sun</div>
+                    <div class="card-body">
+                        <p>Humidity: <span id="humidity"></span>%</p>
+                        <p>Sunrise: <span id="sunrise"></span></p>
+                        <p>Sunset: <span id="sunset"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Places Weather -->
+    <div class="container my-4">
+        <h3 class="text-center">Weather of Common Cities</h3>
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>City</th>
+                    <th>Temperature (°C)</th>
+                    <th>Cloud Cover (%)</th>
+                    <th>Wind Speed (km/h)</th>
+                    <th>Humidity (%)</th>
+                </tr>
+            </thead>
+            <tbody id="commonPlaces">
+                <tr>
+                    <td>Shanghai</td>
+                    <td id="shanghai_temp"></td>
+                    <td id="shanghai_cloud"></td>
+                    <td id="shanghai_wind"></td>
+                    <td id="shanghai_humidity"></td>
+                </tr>
+                <tr>
+                    <td>Boston</td>
+                    <td id="boston_temp"></td>
+                    <td id="boston_cloud"></td>
+                    <td id="boston_wind"></td>
+                    <td id="boston_humidity"></td>
+                </tr>
+                <tr>
+                    <td>Kolkata</td>
+                    <td id="kolkata_temp"></td>
+                    <td id="kolkata_cloud"></td>
+                    <td id="kolkata_wind"></td>
+                    <td id="kolkata_humidity"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
